@@ -1,5 +1,5 @@
 from __future__ import annotations
-from datetime import date
+import datetime
 from pydantic import BaseModel, Field
 
 
@@ -36,7 +36,7 @@ class IndexPrice(BaseModel):
         >>> print(f"KOSPI 지수({kospi_price.date}): {kospi_price.close}")
         KOSPI 지수(2024-01-02): 2655.28
     """
-    date: date = Field(..., description="거래일")
+    date: datetime.date = Field(..., description="거래일")
     close: float = Field(..., description="지수값")
     volume: int | None = Field(None, description="거래량")
 
@@ -68,13 +68,13 @@ class IndexResponse(BaseModel):
     .. code-block:: python
 
         >>> from app.models.index import IndexResponse, IndexPrice
-        >>> from datetime import date
+        >>> import datetime
         >>> # 지수 가격 데이터 생성
         >>> price_data = [
-        ...     IndexPrice(date=date(2024, 1, 2), 
+        ...     IndexPrice(date=datetime.date(2024, 1, 2), 
         ...                close=2655.28, 
         ...                volume=1000000000),
-        ...     IndexPrice(date=date(2024, 1, 3), 
+        ...     IndexPrice(date=datetime.date(2024, 1, 3), 
         ...                close=2661.95, 
         ...                volume=950000000)
         ... ]

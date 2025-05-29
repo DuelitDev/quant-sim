@@ -141,7 +141,7 @@ class KRXService:
             삼성전자 주가 데이터: 21일치
             >>> # 첫 거래일의 시가/종가 출력
             >>> first_day = response.prices[0]
-            >>> print(f"날짜: {first_day.date}, 시가: {first_day.open}, 종가: {first_day.close}")
+            >>> print(f"날짜: {first_day.date}, 시가: {first_day.open_}, 종가: {first_day.close}")
             날짜: 2023-01-02, 시가: 58000, 종가: 58200
         """
         try:
@@ -161,7 +161,7 @@ class KRXService:
             for date_idx, row in df.iterrows():
                 prices.append(StockPrice(
                     date=date_idx.date(),  # noqa  # pyright: ignore
-                    open=int(row['시가']),
+                    open_=int(row['시가']),
                     high=int(row['고가']),
                     low=int(row['저가']),
                     close=int(row['종가']),

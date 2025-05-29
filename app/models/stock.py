@@ -1,5 +1,5 @@
 from __future__ import annotations
-from datetime import date
+import datetime
 from pydantic import BaseModel, Field
 
 
@@ -45,8 +45,8 @@ class StockPrice(BaseModel):
 
     :param date: 거래일
     :type date: date
-    :param open: 시가
-    :type open: int
+    :param open_: 시가
+    :type open_: int
     :param high: 고가
     :type high: int
     :param low: 저가
@@ -64,7 +64,7 @@ class StockPrice(BaseModel):
         >>> import datetime
         >>> price = StockPrice(
         ...     date=datetime.date(2024, 1, 2),
-        ...     open=77000,
+        ...     open_=77000,
         ...     high=77500,
         ...     low=76000,
         ...     close=76800,
@@ -75,8 +75,8 @@ class StockPrice(BaseModel):
         >>> print(f"거래일: {price.date}, 종가: {price.close}원")
         거래일: 2024-01-02, 종가: 76800원
     """
-    date: date = Field(..., description="거래일")
-    open: int = Field(..., description="시가")
+    date: datetime.date = Field(..., description="거래일")
+    open_: int = Field(..., description="시가")
     high: int = Field(..., description="고가")
     low: int = Field(..., description="저가")
     close: int = Field(..., description="종가")
@@ -114,10 +114,10 @@ class StockPriceResponse(BaseModel):
     .. code-block:: python
 
         >>> from app.models.stock import StockPriceResponse, StockPrice
-        >>> from datetime import date
+        >>> import datetime
         >>> price_data = StockPrice(
-        ...     date=date(2024, 1, 2),
-        ...     open=77000,
+        ...     date=datetime.date(2024, 1, 2),
+        ...     open_=77000,
         ...     high=77500,
         ...     low=76000,
         ...     close=76800,
