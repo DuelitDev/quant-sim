@@ -5,13 +5,6 @@ FastAPI 라우터들을 관리하는 패키지
 이 패키지는 API 엔드포인트를 정의하는 FastAPI 라우터들을 포함합니다.
 각 라우터는 특정 기능 영역에 대한 API 엔드포인트를 그룹화합니다.
 
-:param stocks_router: 주식 관련 API 라우터
-:type stocks_router: APIRouter
-:param market_router: 시장 지수 관련 API 라우터
-:type market_router: APIRouter
-:param health_router: 헬스체크 관련 API 라우터
-:type health_router: APIRouter
-
 **예제:**
 
 .. code-block:: python
