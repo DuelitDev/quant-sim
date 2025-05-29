@@ -1,0 +1,12 @@
+[project]
+name = "QuantumKRX"
+version = "0.1.0"
+description = "Advanced Korean Stock Market Analysis and Quantitative Trading Platform"
+readme = "README.md"
+requires-python = ">=3.13.3"
+dependencies = [
+    "fastapi>=0.115.12",
+    "pydantic>=2.11.5",
+    "pykrx>=1.0.51",
+    "uvicorn>=0.34.2",
+]
