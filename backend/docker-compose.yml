@@ -1,10 +1,10 @@
 ---
 services:
-  quant-backend:
+  quant:
     build: .
     container_name: quant-backend
-    ports:
-      - "8000:8000"
+    expose:
+      - 8000
     restart: unless-stopped
     networks:
       - quant-net

@@ -64,7 +64,7 @@ class StockPrice(BaseModel):
         >>> import datetime
         >>> price = StockPrice(
         ...     date=datetime.date(2024, 1, 2),
-        ...     open_=77000,
+        ...     open=77000,
         ...     high=77500,
         ...     low=76000,
         ...     close=76800,
@@ -76,7 +76,7 @@ class StockPrice(BaseModel):
         거래일: 2024-01-02, 종가: 76800원
     """
     date: datetime.date = Field(..., description="거래일")
-    open_: int = Field(..., description="시가")
+    open_: int = Field(..., description="시가", alias="open")
     high: int = Field(..., description="고가")
     low: int = Field(..., description="저가")
     close: int = Field(..., description="종가")
@@ -117,7 +117,7 @@ class StockPriceResponse(BaseModel):
         >>> import datetime
         >>> price_data = StockPrice(
         ...     date=datetime.date(2024, 1, 2),
-        ...     open_=77000,
+        ...     open=77000,
         ...     high=77500,
         ...     low=76000,
         ...     close=76800,
